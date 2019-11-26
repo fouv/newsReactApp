@@ -54,7 +54,8 @@ class HomePage extends Component {
        {/* J1) < 3 -----------------Composant List de AntDesign------------------------------ */}
        
        <div className="Banner"/>
-
+       <Link to="#"> <img  style={{ display: 'flex' , justifyContent: 'center', width: 40, height: 40 }} src="./images/france.png"/></Link>
+        </div>
        <div className="HomeThemes">
           <List
               itemLayout="horizontal"
@@ -76,7 +77,7 @@ class HomePage extends Component {
               </List.Item>
 
               )}/>
-          </div>
+         
        {/* J1) 3 /> -----------------Composant List de AntDesign----------------------------- */}
        
       </div>

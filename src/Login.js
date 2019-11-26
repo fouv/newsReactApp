@@ -26,17 +26,15 @@ class Login extends Component {
 
     console.log('BOUTTON OK')
 
-    fetch(`http://10.2.3.62:3000/sign-up`, {
+    fetch(`http://localhost:3000/sign-up`, {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: `first_name=${this.state.SignUpFirstName}&last_name=${this.state.SignUpFirstName}&email=${this.state.SignUpEmail}&password=${this.state.SignUpPassword}`
+      body: `first_name=${this.state.SignUpFirstName}&last_name=${this.state.SignUpLastName}&email=${this.state.SignUpEmail}&password=${this.state.SignUpPassword}`
     }
     ).then(function(res, err){
       return res.json()
     }).then(data => {
-
-      console.log('Dans mon fetch -->',data)
- 
+      console.log('Dans mon fetch -->',data) 
         this.setState({
           isUserExist:true
         })
@@ -45,13 +43,11 @@ class Login extends Component {
   
   }
 
-
-
   handleSubmitSignIn(){
 
     console.log('Dans HandleSubmitIn',this.state.SignInEmail)
 
-    fetch(`http://10.2.3.62:3000/sign-in?email=${this.state.SignInEmail}`)
+    fetch(`http://localhost:3000/sign-in?email=${this.state.SignInEmail}&password=${this.state.SignInPassword}`)
     .then(response => response.json())
     .then(data => {
 
